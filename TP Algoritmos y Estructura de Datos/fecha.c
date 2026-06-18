@@ -13,3 +13,15 @@ int fechaValida(tFecha* f)
 {
     return (f->mes > 0 &&  f->mes < 13) && (f->dia > 0 && f->dia <= dias_meses[esBisiesto(f)][f->mes-1])  ;
 }
+
+tFecha pasarFecha(const char* s)
+{
+    tFecha f = {0,0,0};
+
+    if(!s || *s == '\0')
+        return f;
+
+    sscanf(s,"%d/%d/%d", &f.dia, &f.mes, &f.anio);
+
+    return f;
+}

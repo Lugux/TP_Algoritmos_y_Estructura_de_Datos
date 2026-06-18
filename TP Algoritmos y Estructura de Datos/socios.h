@@ -3,18 +3,27 @@
 
 #include "fecha.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 typedef struct
 {
     long dni;
-    char apellido[60];
-    char nombre[60];
+    char apellido[61];
+    char nombre[61];
     tFecha nacimiento;
     char sexo;
-    tFecha afliciacion;
-    char categoria[10];
+    tFecha afiliacion;
+    char categoria[11];
     tFecha ultimaCuotaPaga;
     char estado;
     tFecha baja;
 }tSocio;
+
+int leerSocioCSV(FILE *pf, tSocio* socio);
+int grabarSocioDAT(FILE *pf, const tSocio* socio);
+int cargarArchivoSocios();
+
 
 #endif // SOCIOS_H_INCLUDED

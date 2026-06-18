@@ -14,5 +14,6 @@ typedef struct
 
 int esBisiesto(tFecha* f);
 int fechaValida(tFecha* f);
+tFecha pasarFecha(const char *s);
 
 #endif // FECHA_H_INCLUDED
